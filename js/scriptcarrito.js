@@ -139,7 +139,7 @@ function cargarCarrito() {
       //Botón eliminar de cada producto
       btnCarroEliminar.addEventListener("click", () => {
         try {
-          let numeroProductos = prompt("¿Cuántos deseas comprar?");
+          let numeroProductos = prompt("¿Cuántos deseas eliminar?");
           if (numeroProductos === null) {
             throw new Error("Debes introducir un número.");
           }
