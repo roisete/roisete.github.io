@@ -1,0 +1,379 @@
+/*https://github.com/roisete/Proyecto-EV1-ROI*/
+/*https://github.com/roisete/roisete.github.io*/
+
+/*ESTILOS CONTENEDOR*/
+body {
+  background-color: var(--clr-main);
+}
+
+main {
+  width: 80%;
+  background-color: var(--clr-white);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+main h2 {
+  color: var(--clr-main);
+  margin: 1rem auto;
+}
+
+h1.logo:hover {
+  cursor: pointer;
+}
+/*FIN ESTILOS CONTENEDOR*/
+/*-------------------------------------------------------------------------------------------------------*/
+/*BARRA LATERAL*/
+.header-mobile {
+  display: none;
+}
+
+.aside-visible {
+  position: fixed;
+  top: 5vh;
+  right: 0;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding-left: 3vw;
+  z-index: 1000;
+}
+
+nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aside-visible .logo {
+  text-align: center;
+  color: var(--clr-white);
+}
+
+ul li button {
+  color: var(--clr-white);
+  font-size: 1rem;
+  width: 90%;
+  text-align: left;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: var(--clr-main);
+  border-radius: 15px;
+  border: none;
+}
+
+ul li a {
+  color: var(--clr-main);
+  font-size: 1rem;
+  width: 90%;
+  text-align: left;
+  margin-top: 3.5rem;
+  padding: 1rem;
+  background-color: var(--clr-white);
+  border-radius: 15px;
+  border: none;
+  display: inline-block;
+}
+
+ul li button:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  transition-delay: 75ms;
+  cursor: pointer;
+}
+
+ul li button.active {
+  color: var(--clr-main);
+  background-color: var(--clr-white);
+}
+
+.numerito {
+  background-color: var(--clr-main);
+  color: var(--clr-white);
+  padding: 0.15rem 0.25rem;
+}
+
+.bi-hand-index-thumb,
+.bi-hand-index-thumb-fill {
+  display: inline-block;
+  transform: rotate(90deg);
+  margin-right: 1.5rem;
+}
+
+.bi-cart-fill {
+  margin-right: 1.5rem;
+}
+
+.close-menu {
+  display: none;
+}
+/*FIN BARRA LATERAL*/
+/*-------------------------------------------------------------------------------------------------------*/
+/*PRODUCTOS*/
+.contenedor-productos {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: start;
+}
+
+.producto {
+  width: 18%;
+  margin: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.producto-detalles {
+  background-color: var(--clr-main);
+  border-radius: 15px;
+  color: var(--clr-white);
+  padding: 0.5rem;
+  margin-top: -2rem;
+}
+
+.producto-agregar {
+  color: var(--clr-main);
+  margin-top: 0.1rem;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--clr-white);
+  border-radius: 25px;
+  border: none;
+}
+
+.producto-agregar:hover {
+  cursor: pointer;
+}
+/*FIN PRODUCTOS*/
+/*-------------------------------------------------------------------------------------------------------*/
+/*FOOTER*/
+footer {
+  margin-bottom: 2rem;
+  font: 0.75rem;
+}
+/*FIN FOOTER*/
+/*-------------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 1576px) {
+  .producto {
+    width: 22%;
+  }
+}
+
+@media screen and (max-width: 1076px) {
+  .producto {
+    width: 28%;
+  }
+
+  ul li a,
+  ul li button {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    width: 70%;
+  }
+
+  .aside-visible {
+    width: 30%;
+  }
+
+  .contenedor-productos {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 728px) {
+  .producto {
+    width: 43%;
+  }
+
+  .aside-visible {
+    margin-right: -0.5rem;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  main {
+    width: 65%;
+  }
+
+  .aside-visible {
+    width: 30%;
+    margin-left: 1rem;
+  }
+
+  .producto {
+    width: 35%;
+  }
+
+  ul li button,
+  ul li a {
+    width: 80%;
+    margin: 0.75rem 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .bi-hand-index-thumb,
+  .bi-hand-index-thumb-fill,
+  .bi-cart-fill {
+    margin-right: 0.5rem;
+  }
+
+  .aside-visible .logo {
+    font-size: 1.5rem;
+    margin-left: -2rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aside-visible {
+    display: none;
+  }
+
+  .aside-visible.active {
+    position: fixed;
+    background-color: var(--clr-main);
+    top: 0;
+    left: -1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .aside-visible.active header {
+    padding: 1rem;
+  }
+
+  .close-menu {
+    display: block;
+    background-color: var(--clr-main);
+    border: none;
+    color: var(--clr-white);
+    font-size: 1.5rem;
+    margin-bottom: -1rem;
+    margin-top: 0.5rem;
+  }
+
+  .close-menu:hover {
+    cursor: pointer;
+  }
+
+  ul li button,
+  ul li a {
+    width: 90%;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  main {
+    width: 95%;
+    height: auto;
+  }
+
+  main h2 {
+    margin-top: -0.5rem;
+    margin-bottom: -0.75rem;
+  }
+
+  .header-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--clr-white);
+    font-size: 0.8rem;
+  }
+
+  header h1 {
+    margin: 0.5rem 0 0 1.5rem;
+  }
+
+  header button {
+    margin: 0.5rem 1.5rem 0 0;
+    font-size: 1.5rem;
+    border: none;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+  }
+
+  header button:hover {
+    cursor: pointer;
+  }
+
+  .producto {
+    width: 45%;
+  }
+
+  footer{
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 572px) {
+  .producto {
+    width: 43%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .aside-visible.active {
+    width: 40%;
+    margin-left: 0;
+  }
+  .producto {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  ul li button,
+  ul li a {
+    font-size: 0.8rem;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .producto {
+    width: 100%;
+  }
+
+  .aside-visible.active {
+    width: 50%;
+    margin-left: 1rem;
+  }
+
+  .aside-visible.active header {
+    padding-left: 2.5rem;
+  }
+
+  footer {
+    font-size: 0.7rem;
+    margin-left: 1rem;
+  }
+}
